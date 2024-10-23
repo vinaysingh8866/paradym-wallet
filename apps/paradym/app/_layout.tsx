@@ -84,8 +84,9 @@ export default function HomeLayout() {
       .then(async (mediationConfigured) => {
         if (!mediationConfigured) {
           agent.config.logger.debug('Mediation not configured yet.')
-          await setupMediationWithDid(agent, mediatorDid)
+          // await agent.mediator.initialize()
         }
+        
 
         agent.config.logger.info("Mediation configured. You're ready to go!")
         setIsMediationConfigured(true)
